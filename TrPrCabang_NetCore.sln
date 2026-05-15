@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrPrCabang_NetCore", "TrPrCabang_NetCore\TrPrCabang_NetCore.csproj", "{13832F9E-0BAC-44EC-A8DE-8BA3678AE601}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13832F9E-0BAC-44EC-A8DE-8BA3678AE601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13832F9E-0BAC-44EC-A8DE-8BA3678AE601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13832F9E-0BAC-44EC-A8DE-8BA3678AE601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13832F9E-0BAC-44EC-A8DE-8BA3678AE601}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B406E77-6E13-4E0A-B574-64FE7B568DE0}
+	EndGlobalSection
+EndGlobal
