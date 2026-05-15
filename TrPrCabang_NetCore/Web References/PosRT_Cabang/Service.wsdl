@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ChekVersion">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChekVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChekVersionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InitSchema">
+        <s:complexType />
+      </s:element>
+      <s:element name="InitSchemaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InitSchemaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoPosrt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KdToko" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InfoPosrtResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReportSales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TokoCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KodeToko" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Station" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CabangCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KodeCabang" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReportSalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReportSalesResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportStockol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportStockolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReportStockolResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskCabResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrPrCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrPrCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrPrCabResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileInfoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileInfoCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileInfoCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileInfoCabResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACKTaskCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACKTaskCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ACKTaskCabResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACKFileInfoCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ACKFileInfoCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ACKFileInfoCabResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetTableHO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetTableHOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetTableHOResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetTableCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="Jenis" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetTableCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetTableCabResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConnection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="KeyToko_IMSI" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckConnectionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportSalesCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportSalesCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReportSalesCabResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListToko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KdCabang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NamaTable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatusTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatusTableResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestoreTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KodeToko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TblName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DayInterval" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RestoreTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RestoreTableResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NamaTbl" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TglMin" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadMasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadMasterResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTblToko">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadTblTokoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadTblTokoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="tns:StatusToko" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StatusToko">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KodeToko" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ref5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IpToko" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrDetail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendStatusResult" type="tns:StatusToko" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquiryRetTok">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestRET" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquiryRetTokResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InquiryRetTokResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadRetTok">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestRET" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadRetTokResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadRetTokResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTokoUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KodeCabang" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TotalToko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredToko" type="tns:TokoCredentials" />
+            <s:element minOccurs="0" maxOccurs="1" name="CredCabang" type="tns:CabangCredentials" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTokoUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendTokoUpResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Query" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteQueryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTrPrCab">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TaskName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Toko" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cmd" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTrPrCabResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertTrPrCabResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ChekVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:ChekVersion" />
+  </wsdl:message>
+  <wsdl:message name="ChekVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:ChekVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitSchemaSoapIn">
+    <wsdl:part name="parameters" element="tns:InitSchema" />
+  </wsdl:message>
+  <wsdl:message name="InitSchemaSoapOut">
+    <wsdl:part name="parameters" element="tns:InitSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InfoPosrtSoapIn">
+    <wsdl:part name="parameters" element="tns:InfoPosrt" />
+  </wsdl:message>
+  <wsdl:message name="InfoPosrtSoapOut">
+    <wsdl:part name="parameters" element="tns:InfoPosrtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportSalesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportSales" />
+  </wsdl:message>
+  <wsdl:message name="ReportSalesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportStockolSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportStockol" />
+  </wsdl:message>
+  <wsdl:message name="ReportStockolSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportStockolResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTask" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskCabSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskCab" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskCabSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrPrCabSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrPrCab" />
+  </wsdl:message>
+  <wsdl:message name="GetTrPrCabSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrPrCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFileInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileInfoCabSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileInfoCab" />
+  </wsdl:message>
+  <wsdl:message name="GetFileInfoCabSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileInfoCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACKTaskCabSoapIn">
+    <wsdl:part name="parameters" element="tns:ACKTaskCab" />
+  </wsdl:message>
+  <wsdl:message name="ACKTaskCabSoapOut">
+    <wsdl:part name="parameters" element="tns:ACKTaskCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="ACKFileInfoCabSoapIn">
+    <wsdl:part name="parameters" element="tns:ACKFileInfoCab" />
+  </wsdl:message>
+  <wsdl:message name="ACKFileInfoCabSoapOut">
+    <wsdl:part name="parameters" element="tns:ACKFileInfoCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetTableHOSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetTableHO" />
+  </wsdl:message>
+  <wsdl:message name="ResetTableHOSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetTableHOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetTableCabSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetTableCab" />
+  </wsdl:message>
+  <wsdl:message name="ResetTableCabSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetTableCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckConnection" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReportSalesCabSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportSalesCab" />
+  </wsdl:message>
+  <wsdl:message name="ReportSalesCabSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportSalesCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatusTable" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatusTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="RestoreTableSoapIn">
+    <wsdl:part name="parameters" element="tns:RestoreTable" />
+  </wsdl:message>
+  <wsdl:message name="RestoreTableSoapOut">
+    <wsdl:part name="parameters" element="tns:RestoreTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMasterSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadMaster" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMasterSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadMasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTblTokoSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadTblToko" />
+  </wsdl:message>
+  <wsdl:message name="DownloadTblTokoSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadTblTokoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SendStatus" />
+  </wsdl:message>
+  <wsdl:message name="SendStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SendStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="InquiryRetTokSoapIn">
+    <wsdl:part name="parameters" element="tns:InquiryRetTok" />
+  </wsdl:message>
+  <wsdl:message name="InquiryRetTokSoapOut">
+    <wsdl:part name="parameters" element="tns:InquiryRetTokResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadRetTokSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadRetTok" />
+  </wsdl:message>
+  <wsdl:message name="UploadRetTokSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadRetTokResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendTokoUpSoapIn">
+    <wsdl:part name="parameters" element="tns:SendTokoUp" />
+  </wsdl:message>
+  <wsdl:message name="SendTokoUpSoapOut">
+    <wsdl:part name="parameters" element="tns:SendTokoUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteQuery" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertTrPrCabSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTrPrCab" />
+  </wsdl:message>
+  <wsdl:message name="InsertTrPrCabSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTrPrCabResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChekVersionHttpGetIn" />
+  <wsdl:message name="ChekVersionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InitSchemaHttpGetIn" />
+  <wsdl:message name="InitSchemaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InfoPosrtHttpGetIn">
+    <wsdl:part name="KdToko" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InfoPosrtHttpGetOut" />
+  <wsdl:message name="ReportStockolHttpGetIn">
+    <wsdl:part name="Data" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="ReportStockolHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusTableHttpGetIn">
+    <wsdl:part name="ListToko" type="s:string" />
+    <wsdl:part name="KdCabang" type="s:string" />
+    <wsdl:part name="NamaTable" type="s:string" />
+    <wsdl:part name="Status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusTableHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RestoreTableHttpGetIn">
+    <wsdl:part name="KodeToko" type="s:string" />
+    <wsdl:part name="TblName" type="s:string" />
+    <wsdl:part name="DayInterval" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RestoreTableHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMasterHttpGetIn">
+    <wsdl:part name="NamaTbl" type="s:string" />
+    <wsdl:part name="TglMin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMasterHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="InquiryRetTokHttpGetIn">
+    <wsdl:part name="RequestRET" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="InquiryRetTokHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="UploadRetTokHttpGetIn">
+    <wsdl:part name="RequestRET" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadRetTokHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryHttpGetIn">
+    <wsdl:part name="Query" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertTrPrCabHttpGetIn">
+    <wsdl:part name="TaskName" type="s:string" />
+    <wsdl:part name="Toko" type="s:string" />
+    <wsdl:part name="Cmd" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="InsertTrPrCabHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChekVersionHttpPostIn" />
+  <wsdl:message name="ChekVersionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InitSchemaHttpPostIn" />
+  <wsdl:message name="InitSchemaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InfoPosrtHttpPostIn">
+    <wsdl:part name="KdToko" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InfoPosrtHttpPostOut" />
+  <wsdl:message name="ReportStockolHttpPostIn">
+    <wsdl:part name="Data" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="ReportStockolHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusTableHttpPostIn">
+    <wsdl:part name="ListToko" type="s:string" />
+    <wsdl:part name="KdCabang" type="s:string" />
+    <wsdl:part name="NamaTable" type="s:string" />
+    <wsdl:part name="Status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatusTableHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="RestoreTableHttpPostIn">
+    <wsdl:part name="KodeToko" type="s:string" />
+    <wsdl:part name="TblName" type="s:string" />
+    <wsdl:part name="DayInterval" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RestoreTableHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMasterHttpPostIn">
+    <wsdl:part name="NamaTbl" type="s:string" />
+    <wsdl:part name="TglMin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadMasterHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="InquiryRetTokHttpPostIn">
+    <wsdl:part name="RequestRET" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="InquiryRetTokHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="UploadRetTokHttpPostIn">
+    <wsdl:part name="RequestRET" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadRetTokHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryHttpPostIn">
+    <wsdl:part name="Query" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteQueryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertTrPrCabHttpPostIn">
+    <wsdl:part name="TaskName" type="s:string" />
+    <wsdl:part name="Toko" type="s:string" />
+    <wsdl:part name="Cmd" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="InsertTrPrCabHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="ChekVersion">
+      <wsdl:input message="tns:ChekVersionSoapIn" />
+      <wsdl:output message="tns:ChekVersionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitSchema">
+      <wsdl:input message="tns:InitSchemaSoapIn" />
+      <wsdl:output message="tns:InitSchemaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoPosrt">
+      <wsdl:input message="tns:InfoPosrtSoapIn" />
+      <wsdl:output message="tns:InfoPosrtSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportSales">
+      <wsdl:input message="tns:ReportSalesSoapIn" />
+      <wsdl:output message="tns:ReportSalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportStockol">
+      <wsdl:input message="tns:ReportStockolSoapIn" />
+      <wsdl:output message="tns:ReportStockolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl:input message="tns:GetTaskSoapIn" />
+      <wsdl:output message="tns:GetTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCab">
+      <wsdl:input message="tns:GetTaskCabSoapIn" />
+      <wsdl:output message="tns:GetTaskCabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrPrCab">
+      <wsdl:input message="tns:GetTrPrCabSoapIn" />
+      <wsdl:output message="tns:GetTrPrCabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfo">
+      <wsdl:input message="tns:GetFileInfoSoapIn" />
+      <wsdl:output message="tns:GetFileInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfoCab">
+      <wsdl:input message="tns:GetFileInfoCabSoapIn" />
+      <wsdl:output message="tns:GetFileInfoCabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACKTaskCab">
+      <wsdl:input message="tns:ACKTaskCabSoapIn" />
+      <wsdl:output message="tns:ACKTaskCabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ACKFileInfoCab">
+      <wsdl:input message="tns:ACKFileInfoCabSoapIn" />
+      <wsdl:output message="tns:ACKFileInfoCabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetTableHO">
+      <wsdl:input message="tns:ResetTableHOSoapIn" />
+      <wsdl:output message="tns:ResetTableHOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetTableCab">
+      <wsdl:input message="tns:ResetTableCabSoapIn" />
+      <wsdl:output message="tns:ResetTableCabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <wsdl:input message="tns:CheckConnectionSoapIn" />
+      <wsdl:output message="tns:CheckConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportSalesCab">
+      <wsdl:input message="tns:ReportSalesCabSoapIn" />
+      <wsdl:output message="tns:ReportSalesCabSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTable">
+      <wsdl:input message="tns:GetStatusTableSoapIn" />
+      <wsdl:output message="tns:GetStatusTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreTable">
+      <wsdl:input message="tns:RestoreTableSoapIn" />
+      <wsdl:output message="tns:RestoreTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMaster">
+      <wsdl:input message="tns:DownloadMasterSoapIn" />
+      <wsdl:output message="tns:DownloadMasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTblToko">
+      <wsdl:input message="tns:DownloadTblTokoSoapIn" />
+      <wsdl:output message="tns:DownloadTblTokoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendStatus">
+      <wsdl:input message="tns:SendStatusSoapIn" />
+      <wsdl:output message="tns:SendStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquiryRetTok">
+      <wsdl:input message="tns:InquiryRetTokSoapIn" />
+      <wsdl:output message="tns:InquiryRetTokSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadRetTok">
+      <wsdl:input message="tns:UploadRetTokSoapIn" />
+      <wsdl:output message="tns:UploadRetTokSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTokoUp">
+      <wsdl:input message="tns:SendTokoUpSoapIn" />
+      <wsdl:output message="tns:SendTokoUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <wsdl:input message="tns:ExecuteQuerySoapIn" />
+      <wsdl:output message="tns:ExecuteQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTrPrCab">
+      <wsdl:input message="tns:InsertTrPrCabSoapIn" />
+      <wsdl:output message="tns:InsertTrPrCabSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="ChekVersion">
+      <wsdl:input message="tns:ChekVersionHttpGetIn" />
+      <wsdl:output message="tns:ChekVersionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitSchema">
+      <wsdl:input message="tns:InitSchemaHttpGetIn" />
+      <wsdl:output message="tns:InitSchemaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoPosrt">
+      <wsdl:input message="tns:InfoPosrtHttpGetIn" />
+      <wsdl:output message="tns:InfoPosrtHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportStockol">
+      <wsdl:input message="tns:ReportStockolHttpGetIn" />
+      <wsdl:output message="tns:ReportStockolHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTable">
+      <wsdl:input message="tns:GetStatusTableHttpGetIn" />
+      <wsdl:output message="tns:GetStatusTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreTable">
+      <wsdl:input message="tns:RestoreTableHttpGetIn" />
+      <wsdl:output message="tns:RestoreTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMaster">
+      <wsdl:input message="tns:DownloadMasterHttpGetIn" />
+      <wsdl:output message="tns:DownloadMasterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquiryRetTok">
+      <wsdl:input message="tns:InquiryRetTokHttpGetIn" />
+      <wsdl:output message="tns:InquiryRetTokHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadRetTok">
+      <wsdl:input message="tns:UploadRetTokHttpGetIn" />
+      <wsdl:output message="tns:UploadRetTokHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <wsdl:input message="tns:ExecuteQueryHttpGetIn" />
+      <wsdl:output message="tns:ExecuteQueryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTrPrCab">
+      <wsdl:input message="tns:InsertTrPrCabHttpGetIn" />
+      <wsdl:output message="tns:InsertTrPrCabHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="ChekVersion">
+      <wsdl:input message="tns:ChekVersionHttpPostIn" />
+      <wsdl:output message="tns:ChekVersionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitSchema">
+      <wsdl:input message="tns:InitSchemaHttpPostIn" />
+      <wsdl:output message="tns:InitSchemaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoPosrt">
+      <wsdl:input message="tns:InfoPosrtHttpPostIn" />
+      <wsdl:output message="tns:InfoPosrtHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportStockol">
+      <wsdl:input message="tns:ReportStockolHttpPostIn" />
+      <wsdl:output message="tns:ReportStockolHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTable">
+      <wsdl:input message="tns:GetStatusTableHttpPostIn" />
+      <wsdl:output message="tns:GetStatusTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreTable">
+      <wsdl:input message="tns:RestoreTableHttpPostIn" />
+      <wsdl:output message="tns:RestoreTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMaster">
+      <wsdl:input message="tns:DownloadMasterHttpPostIn" />
+      <wsdl:output message="tns:DownloadMasterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InquiryRetTok">
+      <wsdl:input message="tns:InquiryRetTokHttpPostIn" />
+      <wsdl:output message="tns:InquiryRetTokHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadRetTok">
+      <wsdl:input message="tns:UploadRetTokHttpPostIn" />
+      <wsdl:output message="tns:UploadRetTokHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <wsdl:input message="tns:ExecuteQueryHttpPostIn" />
+      <wsdl:output message="tns:ExecuteQueryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTrPrCab">
+      <wsdl:input message="tns:InsertTrPrCabHttpPostIn" />
+      <wsdl:output message="tns:InsertTrPrCabHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChekVersion">
+      <soap:operation soapAction="http://tempuri.org/ChekVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitSchema">
+      <soap:operation soapAction="http://tempuri.org/InitSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoPosrt">
+      <soap:operation soapAction="http://tempuri.org/InfoPosrt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportSales">
+      <soap:operation soapAction="http://tempuri.org/ReportSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportStockol">
+      <soap:operation soapAction="http://tempuri.org/ReportStockol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <soap:operation soapAction="http://tempuri.org/GetTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCab">
+      <soap:operation soapAction="http://tempuri.org/GetTaskCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrPrCab">
+      <soap:operation soapAction="http://tempuri.org/GetTrPrCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfo">
+      <soap:operation soapAction="http://tempuri.org/GetFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfoCab">
+      <soap:operation soapAction="http://tempuri.org/GetFileInfoCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACKTaskCab">
+      <soap:operation soapAction="http://tempuri.org/ACKTaskCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACKFileInfoCab">
+      <soap:operation soapAction="http://tempuri.org/ACKFileInfoCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTableHO">
+      <soap:operation soapAction="http://tempuri.org/ResetTableHO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTableCab">
+      <soap:operation soapAction="http://tempuri.org/ResetTableCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <soap:operation soapAction="http://tempuri.org/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportSalesCab">
+      <soap:operation soapAction="http://tempuri.org/ReportSalesCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTable">
+      <soap:operation soapAction="http://tempuri.org/GetStatusTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreTable">
+      <soap:operation soapAction="http://tempuri.org/RestoreTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMaster">
+      <soap:operation soapAction="http://tempuri.org/DownloadMaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTblToko">
+      <soap:operation soapAction="http://tempuri.org/DownloadTblToko" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendStatus">
+      <soap:operation soapAction="http://tempuri.org/SendStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryRetTok">
+      <soap:operation soapAction="http://tempuri.org/InquiryRetTok" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRetTok">
+      <soap:operation soapAction="http://tempuri.org/UploadRetTok" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTokoUp">
+      <soap:operation soapAction="http://tempuri.org/SendTokoUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <soap:operation soapAction="http://tempuri.org/ExecuteQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTrPrCab">
+      <soap:operation soapAction="http://tempuri.org/InsertTrPrCab" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChekVersion">
+      <soap12:operation soapAction="http://tempuri.org/ChekVersion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitSchema">
+      <soap12:operation soapAction="http://tempuri.org/InitSchema" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoPosrt">
+      <soap12:operation soapAction="http://tempuri.org/InfoPosrt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportSales">
+      <soap12:operation soapAction="http://tempuri.org/ReportSales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportStockol">
+      <soap12:operation soapAction="http://tempuri.org/ReportStockol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <soap12:operation soapAction="http://tempuri.org/GetTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskCab">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrPrCab">
+      <soap12:operation soapAction="http://tempuri.org/GetTrPrCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetFileInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileInfoCab">
+      <soap12:operation soapAction="http://tempuri.org/GetFileInfoCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACKTaskCab">
+      <soap12:operation soapAction="http://tempuri.org/ACKTaskCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ACKFileInfoCab">
+      <soap12:operation soapAction="http://tempuri.org/ACKFileInfoCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTableHO">
+      <soap12:operation soapAction="http://tempuri.org/ResetTableHO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTableCab">
+      <soap12:operation soapAction="http://tempuri.org/ResetTableCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <soap12:operation soapAction="http://tempuri.org/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportSalesCab">
+      <soap12:operation soapAction="http://tempuri.org/ReportSalesCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTable">
+      <soap12:operation soapAction="http://tempuri.org/GetStatusTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreTable">
+      <soap12:operation soapAction="http://tempuri.org/RestoreTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMaster">
+      <soap12:operation soapAction="http://tempuri.org/DownloadMaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTblToko">
+      <soap12:operation soapAction="http://tempuri.org/DownloadTblToko" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendStatus">
+      <soap12:operation soapAction="http://tempuri.org/SendStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryRetTok">
+      <soap12:operation soapAction="http://tempuri.org/InquiryRetTok" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRetTok">
+      <soap12:operation soapAction="http://tempuri.org/UploadRetTok" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTokoUp">
+      <soap12:operation soapAction="http://tempuri.org/SendTokoUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTrPrCab">
+      <soap12:operation soapAction="http://tempuri.org/InsertTrPrCab" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ChekVersion">
+      <http:operation location="/ChekVersion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitSchema">
+      <http:operation location="/InitSchema" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoPosrt">
+      <http:operation location="/InfoPosrt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ReportStockol">
+      <http:operation location="/ReportStockol" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTable">
+      <http:operation location="/GetStatusTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreTable">
+      <http:operation location="/RestoreTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMaster">
+      <http:operation location="/DownloadMaster" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryRetTok">
+      <http:operation location="/InquiryRetTok" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRetTok">
+      <http:operation location="/UploadRetTok" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <http:operation location="/ExecuteQuery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTrPrCab">
+      <http:operation location="/InsertTrPrCab" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ChekVersion">
+      <http:operation location="/ChekVersion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitSchema">
+      <http:operation location="/InitSchema" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoPosrt">
+      <http:operation location="/InfoPosrt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ReportStockol">
+      <http:operation location="/ReportStockol" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusTable">
+      <http:operation location="/GetStatusTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreTable">
+      <http:operation location="/RestoreTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadMaster">
+      <http:operation location="/DownloadMaster" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InquiryRetTok">
+      <http:operation location="/InquiryRetTok" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadRetTok">
+      <http:operation location="/UploadRetTok" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteQuery">
+      <http:operation location="/ExecuteQuery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTrPrCab">
+      <http:operation location="/InsertTrPrCab" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:57824/PosRealTime_Cabang_Service%20(2)/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:57824/PosRealTime_Cabang_Service%20(2)/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://localhost:57824/PosRealTime_Cabang_Service%20(2)/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://localhost:57824/PosRealTime_Cabang_Service%20(2)/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

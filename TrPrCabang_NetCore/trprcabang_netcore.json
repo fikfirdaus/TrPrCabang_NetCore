@@ -1,0 +1,35 @@
+{
+  "MyAppSettings": {
+    "AppName": "TrPrCabang Console App",
+    "AppInitial": "TPC",
+    "Version": "1.0.0.0"
+  },
+  "ConnectionStrings": {
+    "ConnStrTrPr": "Server=localhost;Port=3306;Database=db_idm;User ID=root;Password=fikfirdaus;AllowPublicKeyRetrieval=True;SslMode=none;"
+  },
+  "AppConfig": {
+    "ServerTrPr": "192.168.10.230",
+    "DatabaseTrPr": "trpr_cabang",
+    "PortTrPr": "3306",
+    "UrlPosRT": "http://192.168.10.230:8118/Service.asmx",
+    "MasterToko": "poscabang|mstr_toko_today",
+    "UrlMasterToko": ""
+  },
+  "EmailConfig": {
+    "From": "payment_point@virtual.indomaret.co.id",
+    "Server": "192.168.2.240",
+    "Port": 25,
+    "UserName": "support24jamtoko@indomaret.co.id",
+    "Password": "password",
+    "To": "beben@indomaret.co.id",
+    "CC": "wisanggeni@indomaret.co.id"
+  },
+  "exclude": [
+    "**/bin",
+    "**/bower_components",
+    "**/jspm_packages",
+    "**/node_modules",
+    "**/obj",
+    "**/platforms"
+  ]
+}
